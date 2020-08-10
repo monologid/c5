@@ -1,6 +1,6 @@
 {
   "name": "@c5/react-login",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A login view component for React.",
   "author": "madebyais",
   "license": "MIT",

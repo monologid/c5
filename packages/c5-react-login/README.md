@@ -15,7 +15,8 @@ npm install --save @c5/react-login
 ```bash
 npm install --save antd tailwind
 
-# Afterward, follow the step-by-step to setup tailwind, you can find it here: https://tailwindcss.com/docs/installation/
+# Afterward, follow the step-by-step to setup tailwind.
+# Yyou can find it here: https://tailwindcss.com/docs/installation/
 ```
 
 ## Props
@@ -64,4 +65,4 @@ class Example extends Component {
 
 ## License
 
-MIT © [madebyais](https://github.com/madebyais)
+[MIT](https://github.com/monologid/c5/blob/master/LICENSE) © [Monolog](https://github.com/monolog)
