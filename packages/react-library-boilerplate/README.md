@@ -16,7 +16,7 @@ npm install --save @c5/react-package_name
 npm install --save antd tailwind
 
 # Afterward, follow the step-by-step to setup tailwind.
-# Yyou can find it here: https://tailwindcss.com/docs/installation/
+# You can find it here: https://tailwindcss.com/docs/installation/
 ```
 
 ## Props

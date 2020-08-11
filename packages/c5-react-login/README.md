@@ -4,6 +4,12 @@
 
 [![NPM](https://img.shields.io/npm/v/@c5/react-login.svg)](https://www.npmjs.com/package/@c5/react-login) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+## Sample Login Form
+
+<p align="center">
+  <img src="./example/sample-login.png" />
+</p>
+
 ## Install
 
 ```bash
@@ -16,7 +22,7 @@ npm install --save @c5/react-login
 npm install --save antd tailwind
 
 # Afterward, follow the step-by-step to setup tailwind.
-# Yyou can find it here: https://tailwindcss.com/docs/installation/
+# You can find it here: https://tailwindcss.com/docs/installation/
 ```
 
 ## Props
@@ -41,7 +47,7 @@ import React, { Component } from 'react'
 import Login from '@c5/react-login'
 import 'antd/dist/antd.css'
 
-class Example extends Component {
+const ExampleLogin = () => {
   const onFinish = values => {
     console.dir(values);
   }
@@ -50,16 +56,12 @@ class Example extends Component {
     console.dir(err)
   }
 
-  render() {
-    return (
-      <Login
-        description='to continue to Cosmiq'
-        registrationUrl='https://cosmiq.app'
-        forgotPasswordUrl='https://cosmiq.app'
-        onFinish={onFinish}
-        onFinishFailed={onFinishFailed} />
-    )
-  }
+  return <Login
+    description='to continue to Cosmiq'
+    registrationUrl='https://cosmiq.app'
+    forgotPasswordUrl='https://cosmiq.app'
+    onFinish={onFinish}
+    onFinishFailed={onFinishFailed} />
 }
 ```
 

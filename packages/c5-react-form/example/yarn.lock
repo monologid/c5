@@ -1190,7 +1190,7 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@c5/react-login@link:..":
+"@c5/react-form@link:..":
   version "0.0.0"
   uid ""
 

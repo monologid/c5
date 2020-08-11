@@ -1,13 +1,13 @@
 {
-  "name": "@c5/react-login",
-  "version": "0.1.2",
-  "description": "A login view component for React.",
+  "name": "@c5/react-form",
+  "version": "0.1.0",
+  "description": "A component to generate a form for React.",
   "author": "madebyais",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/monologid/c5.git",
-    "directory": "packages/c5-react-login"
+    "directory": "packages/react-form"
   },
   "main": "dist/index.js",
   "module": "dist/index.modern.js",

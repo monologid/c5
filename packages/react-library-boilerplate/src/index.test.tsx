@@ -1,7 +1,7 @@
-import Login from '.'
+import Component from '.'
 
-describe('Login', () => {
+describe('Component', () => {
   it('is truthy', () => {
-    expect(Login).toBeTruthy()
+    expect(Component).toBeTruthy()
   })
 })
