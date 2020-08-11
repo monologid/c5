@@ -22,4 +22,4 @@ The Cosmiq repo is managed as a monorepo that is composed of many [npm packages]
 
 ## License
 
-[MIT](LICENSE)
+[Apache 2.0](LICENSE)

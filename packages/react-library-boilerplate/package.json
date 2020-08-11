@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "A boilerplate project for creating React library",
   "author": "madebyais",
-  "license": "MIT",
+  "license": "Apache 2.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/monologid/c5.git",

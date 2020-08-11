@@ -41,4 +41,4 @@ class Example extends Component {
 
 ## License
 
-[MIT](https://github.com/monologid/c5/blob/master/LICENSE) © [Monolog](https://github.com/monolog)
+[Apache 2.0](https://github.com/monologid/c5/blob/master/LICENSE) © [Monolog](https://github.com/monolog)
