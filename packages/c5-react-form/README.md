@@ -7,7 +7,7 @@
 ## Sample Generated Form
 
 <p align="center">
-  <img src="./example/sample-generated-form.png" />
+  <img src="https://github.com/monologid/c5/raw/master/packages/c5-react-form/example/sample-generated-form.png" />
 </p>
 
 ## Install

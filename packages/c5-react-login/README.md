@@ -7,7 +7,7 @@
 ## Sample Login Form
 
 <p align="center">
-  <img src="./example/sample-login.png" />
+  <img src="https://github.com/monologid/c5/raw/master/packages/c5-react-login/example/sample-login.png" />
 </p>
 
 ## Install
