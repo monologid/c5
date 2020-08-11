@@ -30,17 +30,19 @@ npm install --save antd tailwind
 | Attribute Name | Description | Default Value |
 |----------------|-------------|---------------|
 | form | Array of object contains the form object | Please refer to the example below |
-| onFinish | A method when submit button is clicked and validation success | |
-| onFinishFailed | A method when submit button is clicked and validation failed | |
+| onSubmit | A method when submit button is clicked and validation success | |
+| onError | A method when submit button is clicked and validation failed | |
 
 ## Usage
 
 ```tsx
 import React, { Component } from 'react'
-import Form from '@c5/react-form'
+import Form, { Types } from '@c5/react-form'
 import 'antd/dist/antd.css'
 
 const ExampleForm = () => {
+  const [selectData, setSelectData] = React.useState(undefined)
+
   const forms = [
     { key: 'text', title: 'Text', type: Types.TEXT, required: true, rules: [{ required: true, message: 'Please input your Fullname!' }] },
     { key: 'textarea', title: 'Text Area', type: Types.TEXTAREA, required: false, rules: [] },
@@ -52,16 +54,22 @@ const ExampleForm = () => {
         { label: 'One', value: 'one' },
         { label: 'Two', value: 'Two' },
         { label: 'Three', value: 'three' }
-      ]
+      ],
+      onChange: value => setSelectData(value)
     },
     { key: 'switch', title: 'Switch', type: Types.SWITCH, required: false }
   ]
 
-  const onFinish = values => {
-    console.dir(values)
+  const onSubmit = values => {
+    values.select = selectData;
+    console.dir(values);
+
+    // The value of `date` is using MomentJS,
+    // so you can use the format(...) method to format the date
+    console.dir(values.date.format('YYYY-MM-DD'))
   }
 
-  const onFinishFailed = err => {
+  const onError = err => {
     console.dir(err);
   }
 
@@ -70,8 +78,8 @@ const ExampleForm = () => {
       <div className='border p-10' style={{width: 400}}>
         <Form
           forms={forms}
-          onFinish={onFinish} 
-          onFinishFailed={onFinishFailed} />
+          onSubmit={onSubmit}
+          onError={onError} />
       </div>
     </div>
   )

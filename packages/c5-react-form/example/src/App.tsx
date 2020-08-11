@@ -3,6 +3,8 @@ import React from 'react'
 import { Form, Types } from '@c5/react-form'
 
 export default () => {
+  const [selectData, setSelectData] = React.useState(undefined)
+
   const forms = [
     { key: 'text', title: 'Text', type: Types.TEXT, required: true, rules: [{ required: true, message: 'Please input your Fullname!' }] },
     { key: 'textarea', title: 'Text Area', type: Types.TEXTAREA, required: false, rules: [] },
@@ -14,16 +16,22 @@ export default () => {
         { label: 'One', value: 'one' },
         { label: 'Two', value: 'Two' },
         { label: 'Three', value: 'three' }
-      ]
+      ],
+      onChange: value => setSelectData(value)
     },
     { key: 'switch', title: 'Switch', type: Types.SWITCH, required: false }
   ]
 
-  const onFinish = values => {
-    console.dir(values)
+  const onSubmit = values => {
+    values.select = selectData;
+    console.dir(values);
+
+    // The value of `date` is using MomentJS,
+    // so you can use the format(...) method to format the date
+    console.dir(values.date.format('YYYY-MM-DD'))
   }
 
-  const onFinishFailed = err => {
+  const onError = err => {
     console.dir(err);
   }
 
@@ -32,8 +40,8 @@ export default () => {
       <div className='border p-10' style={{width: 400}}>
         <Form
           forms={forms}
-          onFinish={onFinish} 
-          onFinishFailed={onFinishFailed} />
+          onSubmit={onSubmit}
+          onError={onError} />
       </div>
     </div>
   )

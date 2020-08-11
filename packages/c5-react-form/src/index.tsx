@@ -22,20 +22,20 @@ export const Types = {
 
 interface Props {
   forms: Array<any>,
-  onFinish: any,
-  onFinishFailed: any
+  onSubmit: any,
+  onError: any
 }
 
 export const Form = (props: Props) => {
   const {
     forms,
-    onFinish,
-    onFinishFailed
+    onSubmit,
+    onError
   } = props;
 
   return (
     <React.Fragment>
-      <F layout='vertical' onFinish={onFinish} onFinishFailed={onFinishFailed}>
+      <F layout='vertical' onFinish={onSubmit} onFinishFailed={onError}>
         {forms.map(form => {
           if (form.type === Types.SELECT) {
             return (
