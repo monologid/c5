@@ -10,8 +10,8 @@ interface Props {
   registrationText?: string,
   signInText?: string,
   forgotPasswordUrl?: string,
-  onFinish: any,
-  onFinishFailed: any
+  onSubmit: any,
+  onError: any
 }
 
 export default (props: Props) => {
@@ -24,7 +24,8 @@ export default (props: Props) => {
     registrationText = 'Create account',
     signInText = 'Sign In',
     forgotPasswordUrl = '#',
-    onFinish, onFinishFailed,
+    onSubmit,
+    onError,
   } = props;
 
   return (
@@ -34,18 +35,20 @@ export default (props: Props) => {
         <div className='text-center text-sm'>{description}</div>
 
         <div className='mt-10'>
-          <Form layout='vertical' onFinish={onFinish} onFinishFailed={onFinishFailed}>
+          <Form layout='vertical' onFinish={onSubmit} onFinishFailed={onError}>
             <Form.Item label={usernameLabel} name='username' rules={[{ required: true, message: `Please input your ${usernameLabel}!` }]}>
               <Input />
             </Form.Item>
 
             <Form.Item label={passwordLabel} name='password' rules={[{ required: true, message: `Please input your ${passwordLabel}!` }]}>
               <Input.Password />
-
-              { registrationUrl !== '#' &&
-                <div className='mt-3 text-xs'><a href={forgotPasswordUrl}>Forgot password?</a></div>
-              }
             </Form.Item>
+
+            { registrationUrl !== '#' &&
+              <div className='text-xs' style={{marginTop: -10}}>
+                <a href={forgotPasswordUrl}>Forgot password?</a>
+              </div>
+            }
 
             <div className='w-full flex justify-between items-center mt-10'>
               <div>

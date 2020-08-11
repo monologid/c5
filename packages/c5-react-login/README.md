@@ -37,8 +37,8 @@ npm install --save antd tailwind
 | registrationText | Set registration text | Create account |
 | signInText | Set sign in text | Sign In |
 | forgotPasswordUrl | Set forgot password url | # |
-| onFinish | A method when submit button is clicked and validation success | |
-| onFinishFailed | A method when submit button is clicked and validation failed | |
+| onSubmit | A method when submit button is clicked and validation success | |
+| onError | A method when submit button is clicked and validation failed | |
 
 ## Usage
 
@@ -48,11 +48,11 @@ import Login from '@c5/react-login'
 import 'antd/dist/antd.css'
 
 const ExampleLogin = () => {
-  const onFinish = values => {
+  const onSubmit = values => {
     console.dir(values);
   }
 
-  const onFinishFailed = err => {
+  const onError = err => {
     console.dir(err)
   }
 
@@ -60,8 +60,8 @@ const ExampleLogin = () => {
     description='to continue to Cosmiq'
     registrationUrl='https://cosmiq.app'
     forgotPasswordUrl='https://cosmiq.app'
-    onFinish={onFinish}
-    onFinishFailed={onFinishFailed} />
+    onSubmit={onSubmit}
+    onError={onError} />
 }
 ```
 
