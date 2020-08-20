@@ -29,6 +29,7 @@ npm install --save antd tailwind
 
 | Attribute Name | Description | Default Value |
 |----------------|-------------|---------------|
+| formHook | You can use the antd form hook (optional) | |
 | form | Array of object contains the form object | Please refer to the example below |
 | onSubmit | A method when submit button is clicked and validation success | |
 | onError | A method when submit button is clicked and validation failed | |
@@ -41,7 +42,7 @@ import Form, { Types } from '@c5/react-form'
 import 'antd/dist/antd.css'
 
 const ExampleForm = () => {
-  const [selectData, setSelectData] = React.useState(undefined)
+  const [selectData, setSelectData] = React.useState(undefined);
 
   const forms = [
     { key: 'text', title: 'Text', type: Types.TEXT, required: true, rules: [{ required: true, message: 'Please input your Fullname!' }], visible: true },

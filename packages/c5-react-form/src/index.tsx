@@ -21,6 +21,7 @@ export const Types = {
 }
 
 interface Props {
+  formState?: any,
   forms: Array<any>,
   onSubmit: any,
   onError: any
@@ -28,6 +29,7 @@ interface Props {
 
 export const Form = (props: Props) => {
   const {
+    formState,
     forms,
     onSubmit,
     onError
@@ -35,7 +37,7 @@ export const Form = (props: Props) => {
 
   return (
     <React.Fragment>
-      <F layout='vertical' onFinish={onSubmit} onFinishFailed={onError}>
+      <F layout='vertical' form={formState} onFinish={onSubmit} onFinishFailed={onError}>
         {forms.map(form => {
           if (form && !form.visible) return;
           if (form.type === Types.SWITCH) {

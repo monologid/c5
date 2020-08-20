@@ -1,6 +1,6 @@
 {
   "name": "@c5/react-form",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A component to generate a form for React.",
   "author": "madebyais",
   "license": "Apache 2.0",
