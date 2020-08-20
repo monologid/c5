@@ -6,20 +6,21 @@ export default () => {
   const [selectData, setSelectData] = React.useState(undefined)
 
   const forms = [
-    { key: 'text', title: 'Text', type: Types.TEXT, required: true, rules: [{ required: true, message: 'Please input your Fullname!' }] },
-    { key: 'textarea', title: 'Text Area', type: Types.TEXTAREA, required: false, rules: [] },
-    { key: 'date', title: 'Date', type: Types.DATE, required: false, rules: [] },
-    { key: 'number', title: 'Number', type: Types.NUMBER, required: false, rules: [] },
-    { key: 'password', title: 'Password', type: Types.PASSWORD, required: false, rules: [] },
+    { key: 'text', title: 'Text', type: Types.TEXT, required: true, rules: [{ required: true, message: 'Please input your Fullname!' }], visible: true },
+    { key: 'textarea', title: 'Text Area', type: Types.TEXTAREA, required: false, rules: [], visible: true },
+    { key: 'date', title: 'Date', type: Types.DATE, required: false, rules: [], visible: true },
+    { key: 'number', title: 'Number', type: Types.NUMBER, required: false, rules: [], visible: true },
+    { key: 'password', title: 'Password', type: Types.PASSWORD, required: false, rules: [], visible: true },
     { key: 'select', title: 'Select', type: Types.SELECT, required: false, rules: [],
       options: [
         { label: 'One', value: 'one' },
         { label: 'Two', value: 'Two' },
         { label: 'Three', value: 'three' }
       ],
-      onChange: value => setSelectData(value)
+      onChange: value => setSelectData(value),
+      visible: true
     },
-    { key: 'switch', title: 'Switch', type: Types.SWITCH, required: false }
+    { key: 'switch', title: 'Switch', type: Types.SWITCH, required: false, visible: true }
   ]
 
   const onSubmit = values => {

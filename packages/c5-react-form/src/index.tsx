@@ -37,7 +37,8 @@ export const Form = (props: Props) => {
     <React.Fragment>
       <F layout='vertical' onFinish={onSubmit} onFinishFailed={onError}>
         {forms.map(form => {
-          if (form.type === Types.SELECT) {
+          if (form && !form.visible) return;
+          if (form.type === Types.SWITCH) {
             return (
               <React.Fragment key={form.key}>
                 <F.Item key={form.key} id={form.key} label={form.title} name={form.key} rules={form.rules} valuePropName="checked">
@@ -99,8 +100,6 @@ const createForm = (form) => {
     case Types.SWITCH:
       f = <Switch />;
       break;
-    default:
-      f = <Input />
   }
 
   return f;
