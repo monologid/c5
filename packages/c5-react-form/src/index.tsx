@@ -6,12 +6,14 @@ import {
   Input,
   InputNumber,
   Select,
-  Switch
+  Switch,
+  Upload
 } from 'antd'
 import { formatTimeStr } from 'antd/lib/statistic/utils';
 
 export const Types = {
   DATE: 'DATE',
+  FILE: 'FILE',
   NUMBER: 'NUMBER',
   PASSWORD: 'PASSWORD',
   TEXT: 'TEXT',
@@ -40,6 +42,7 @@ export const Form = (props: Props) => {
       <F layout='vertical' form={formState} onFinish={onSubmit} onFinishFailed={onError}>
         {forms.map(form => {
           if (form && !form.visible) return;
+
           if (form.type === Types.SWITCH) {
             return (
               <React.Fragment key={form.key}>
@@ -74,6 +77,11 @@ const createForm = (form) => {
     case Types.DATE:
       f = <DatePicker />;
       break;
+    case Types.FILE:
+      f = <Upload {...form.options}>
+        <Button>{form.options.text}</Button>
+      </Upload>
+      break;
     case Types.NUMBER:
       f = <InputNumber />;
       break;
@@ -89,6 +97,7 @@ const createForm = (form) => {
     case Types.SELECT:
       f = <React.Fragment>
             <Select
+              defaultValue={form.defaultValue || null}
               showSearch
               onChange={form.onChange}
               placeholder='Please select an option'

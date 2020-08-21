@@ -18,9 +18,25 @@ export default () => {
         { label: 'Three', value: 'three' }
       ],
       onChange: value => setSelectData(value),
-      visible: true
+      visible: true,
+      //defaultValue: 'three' // add this field if you want to set default value
     },
-    { key: 'switch', title: 'Switch', type: Types.SWITCH, required: false, visible: true }
+    { key: 'switch', title: 'Switch', type: Types.SWITCH, required: false, visible: true },
+    { key: 'file', title: 'Upload File', type: Types.FILE, required: false, visible: true,
+      options: {
+        name: 'the_field_name',
+        action: 'http://localhost:9090/upload',
+        headers: {
+          'Authorization': ''
+        },
+        text: 'Browse a file',
+        listType: 'picture-card', // this will change browse file layout and the list of uploaded files
+        showUploadList: true,
+        onChange: (info) => {
+          console.dir(info)
+        }
+      }
+    }
   ]
 
   const onSubmit = values => {
