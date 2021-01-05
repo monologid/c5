@@ -19,6 +19,8 @@ export const Types = {
   TEXT: 'TEXT',
   TEXTAREA: 'TEXTAREA',
   SELECT: 'SELECT',
+  MULTIPLE_SELECT: 'MULTIPLE_SELECT',
+  TAGS: "TAGS",
   SWITCH: 'SWITCH'
 }
 
@@ -98,6 +100,36 @@ const createForm = (form) => {
       f = <React.Fragment>
             <Select
               defaultValue={form.defaultValue || null}
+              showSearch
+              onChange={form.onChange}
+              placeholder='Please select an option'
+              optionFilterProp="children">
+              {form.options.map(item => (
+                <Select.Option key={item.value} value={item.value}>{item.label}</Select.Option>
+              ))}
+            </Select>
+          </React.Fragment>;
+      break;
+    case Types.MULTIPLE_SELECT:
+      f = <React.Fragment>
+            <Select
+              mode='multiple'
+              defaultValue={form.defaultValue || []}
+              showSearch
+              onChange={form.onChange}
+              placeholder='Please select an option'
+              optionFilterProp="children">
+              {form.options.map(item => (
+                <Select.Option key={item.value} value={item.value}>{item.label}</Select.Option>
+              ))}
+            </Select>
+          </React.Fragment>;
+      break;
+    case Types.TAGS:
+      f = <React.Fragment>
+            <Select
+              mode='tags'
+              defaultValue={form.defaultValue || []}
               showSearch
               onChange={form.onChange}
               placeholder='Please select an option'

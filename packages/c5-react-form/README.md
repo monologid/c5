@@ -60,6 +60,26 @@ const ExampleForm = () => {
       visible: true,
       //defaultValue: 'three' // add this field if you want to set default value
     },
+    { key: 'multipleSelect', title: 'Multiple Select', type: Types.MULTIPLE_SELECT, required: false, rules: [],
+      options: [
+        { label: 'One', value: 'one' },
+        { label: 'Two', value: 'Two' },
+        { label: 'Three', value: 'three' }
+      ],
+      onChange: value => setSelectData(value),
+      visible: true,
+      defaultValue: [] // add this field if you want to set default value
+    },
+    { key: 'tags', title: 'Tags', type: Types.TAGS, required: false, rules: [],
+      options: [
+        { label: 'One', value: 'one' },
+        { label: 'Two', value: 'Two' },
+        { label: 'Three', value: 'three' }
+      ],
+      onChange: value => setSelectData(value),
+      visible: true,
+      defaultValue: [] // add this field if you want to set default value
+    },
     { key: 'switch', title: 'Switch', type: Types.SWITCH, required: false, visible: true },
     { key: 'file', title: 'Upload File', type: Types.FILE, required: false, visible: true,
       options: {
